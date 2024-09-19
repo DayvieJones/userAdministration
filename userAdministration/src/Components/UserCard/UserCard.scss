@@ -1,0 +1,45 @@
+.userCard {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: rgb(211, 211, 211);
+  border-radius: 10px;
+  //   padding: 1.5rem;
+  width: 600px;
+  height: 300px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+
+  &__actionArea {
+    display: flex;
+    width: 500px;
+    height: 300px;
+  }
+
+  &__media {
+    padding: 1.5rem;
+
+    border-right: 1px solid rgba(128, 128, 128, 0.5);
+  }
+
+  &__content {
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    align-content: space-between;
+    flex-direction: column;
+
+    &__name {
+      font-weight: bold;
+    }
+
+    &__info-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+    }
+
+    .info__item {
+      text-align: center;
+      width: 8rem;
+    }
+  }
+}
