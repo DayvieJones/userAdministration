@@ -8,10 +8,10 @@ export default function Sidebar() {
       <h2>Sidebar</h2>
 
       <Link to={"/"}>
-        <Button buttonType={"button"} value="Overview" />
+        <Button buttonType={"button"} buttonContent="Overview" />
       </Link>
       <Link to={"/createview"}>
-        <Button buttonType={"button"} value="Create User" />
+        <Button buttonType={"button"} buttonContent="Create User" />
       </Link>
     </div>
   );

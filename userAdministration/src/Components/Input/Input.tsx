@@ -1,30 +1,33 @@
 import "./Input.scss";
 
 interface InputInterface {
+  name: string;
   inputType: string;
   inputValue: any;
   placeholder: string;
-  required?: boolean;
   min?: string;
   max?: string;
+  handleInputChangeEvent: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Input({
+  name,
   inputType,
   inputValue,
   placeholder,
-  required,
   min,
   max,
+  handleInputChangeEvent,
 }: InputInterface) {
   return (
     <input
+      name={name}
       type={inputType}
       value={inputValue}
       placeholder={placeholder}
-      required={required}
       min={min}
       max={max}
+      onChange={handleInputChangeEvent}
     />
   );
 }

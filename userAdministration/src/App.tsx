@@ -16,7 +16,6 @@ function App() {
           { path: "", element: <Mainview /> },
           { path: "/editview", element: <Editview /> },
           { path: "/createview", element: <Createview /> },
-
           { path: "*", element: <NoMatch /> },
         ],
       },

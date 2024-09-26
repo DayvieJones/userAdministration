@@ -14,9 +14,9 @@ export default function UserCard() {
             <p className="info__item">01.01.2001</p>
             <p className="info__item">Test Street blvd</p>
             <p className="info__item">test@street.com</p>
-            <p className="info__item">www.test-street.com</p>
+            <p className="info__item">Zip Code</p>
+            <p className="info__item">test@street.com</p>
             <p className="info__item">+01 23456789</p>
-            <p className="info__item">Male</p>
           </div>
         </div>
       </div>

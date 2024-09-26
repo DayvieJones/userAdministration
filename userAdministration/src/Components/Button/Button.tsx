@@ -1,12 +1,21 @@
 import "./Button.scss";
 
 interface ButtonInterface {
-  value: string;
+  buttonContent: string;
   buttonType: any;
+  handleOnClickEvent?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-function Button({ value, buttonType }: ButtonInterface) {
-  return <button type={buttonType}>{value}</button>;
+function Button({
+  buttonContent,
+  buttonType,
+  handleOnClickEvent,
+}: ButtonInterface) {
+  return (
+    <button onClick={handleOnClickEvent} type={buttonType}>
+      {buttonContent}
+    </button>
+  );
 }
 
 export default Button;

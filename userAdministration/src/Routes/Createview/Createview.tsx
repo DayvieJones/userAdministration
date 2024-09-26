@@ -1,9 +1,44 @@
+import { useState } from "react";
 import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import "./Createview.scss";
+import saveProfiles from "../../Components/Functions/saveProfiles";
+import getDate from "../../Components/Functions/getDate";
 
-export default function Createview() {
+export function Createview() {
+  const [inputValue, setInputValue] = useState({
+    firstName: "",
+    secondName: "",
+    date: "",
+    streetAdress: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    mail: "",
+    phoneNumber: "",
+  });
+
+  const handleOnClickEvent = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    const userProfiles = [{}];
+    
+    userProfiles.push(inputValue);
+    saveProfiles(userProfiles);
+  };
+
+  const handleInputChangeEvent = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const { name, value } = event.target;
+
+    // Aktualisiere nur das spezifische Feld
+    setInputValue((prevValue) => ({
+      ...prevValue,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
       <div className="createview">
@@ -16,16 +51,18 @@ export default function Createview() {
                 <h3>Name</h3>
                 <div className="group__input">
                   <Input
-                    inputValue=""
+                    name="firstName"
+                    inputValue={inputValue.firstName}
                     inputType="text"
                     placeholder="First Name"
-                    required={true}
+                    handleInputChangeEvent={handleInputChangeEvent}
                   />
                   <Input
-                    inputValue=""
+                    name="secondName"
+                    inputValue={inputValue.secondName}
                     inputType="text"
                     placeholder="Last Name"
-                    required={true}
+                    handleInputChangeEvent={handleInputChangeEvent}
                   />
                 </div>
               </div>
@@ -36,12 +73,13 @@ export default function Createview() {
                 <div className="group__items">
                   <h3>Birth Date</h3>
                   <Input
-                    inputValue=""
+                    name="date"
+                    inputValue={inputValue.date}
                     inputType="date"
-                    placeholder="dd-mm-yyyy"
-                    required
+                    placeholder="chose your Birth date"
                     min="1990-01-01"
-                    max="2030-12-31"
+                    max={getDate()}
+                    handleInputChangeEvent={handleInputChangeEvent}
                   />
                 </div>
               </div>
@@ -51,10 +89,34 @@ export default function Createview() {
               <div className="section__group">
                 <h3>Address</h3>
                 <div className="group__input">
-                  <input type="text" placeholder="Street Address" required />
-                  <input type="text" placeholder="City" required />
-                  <input type="text" placeholder="State / Province" />
-                  <input type="text" placeholder="Postal / Zip Code" required />
+                  <Input
+                    name="streetAdress"
+                    inputValue={inputValue.streetAdress}
+                    inputType="text"
+                    placeholder="Street Address"
+                    handleInputChangeEvent={handleInputChangeEvent}
+                  />
+                  <Input
+                    name="city"
+                    inputValue={inputValue.city}
+                    inputType="text"
+                    placeholder="City"
+                    handleInputChangeEvent={handleInputChangeEvent}
+                  />
+                  <Input
+                    name="state"
+                    inputValue={inputValue.state}
+                    inputType="text"
+                    placeholder="State / Province"
+                    handleInputChangeEvent={handleInputChangeEvent}
+                  />
+                  <Input
+                    name="zipCode"
+                    inputValue={inputValue.zipCode}
+                    inputType="number"
+                    placeholder="Postal / Zip Code"
+                    handleInputChangeEvent={handleInputChangeEvent}
+                  />
                 </div>
               </div>
             </div>
@@ -63,29 +125,57 @@ export default function Createview() {
               <div className="section__group">
                 <h3>E-Mail</h3>
                 <div className="group__input">
-                  <input
-                    type="email"
+                  <Input
+                    name="mail"
+                    inputValue={inputValue.mail}
+                    inputType="email"
                     placeholder="ex: myname@example.com"
-                    required
+                    handleInputChangeEvent={handleInputChangeEvent}
                   />
                 </div>
                 <div className="section__group">
                   <h3>Phone Number</h3>
                   <div className="group__input">
-                    <input
-                      type="tel"
+                    <Input
+                      name="phoneNumber"
+                      inputValue={inputValue.phoneNumber}
+                      inputType="number"
                       placeholder="(+49) 0000-000000"
-                      required
+                      handleInputChangeEvent={handleInputChangeEvent}
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <Button value={"Create"} buttonType={"submit"} />
+            <Button
+              handleOnClickEvent={handleOnClickEvent}
+              buttonContent={"Create"}
+              buttonType={"submit"} //prevent default
+            />
           </form>
         </div>
       </div>
     </>
   );
 }
+
+export default Createview;
+
+/* **** TODO     ****
+ *
+ *
+ * Local Storage Vorbereiten
+ * UserCard in LocalStorage speichern
+ * UserCard von localstorage laden und displayen
+ *
+ * **** Gedanken ****
+ * Nach drücken von create -> Profil Karte mit den Daten befüllen
+ *
+ * Loaddata to UserCard
+ * UserCard Bild wird über userAPI gefetched
+ *
+ * Überprüfung auf Gültigkeit von Inhalt/Email/Nummer
+ *
+ *
+ */

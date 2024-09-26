@@ -1,8 +1,13 @@
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import UserCard from "../../Components/UserCard/UserCard";
 import "./Mainview.scss";
+import {} from "../Createview/Createview";
+import getProfiles from "../../Components/Functions/getProfiles";
 
 function Mainview() {
+  const test = getProfiles();
+  console.log(test);
+
   return (
     <>
       <div className="index">
