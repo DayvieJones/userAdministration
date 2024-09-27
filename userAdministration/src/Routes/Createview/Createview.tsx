@@ -5,6 +5,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar";
 import "./Createview.scss";
 import saveProfiles from "../../Components/Functions/saveProfiles";
 import getDate from "../../Components/Functions/getDate";
+import { userProfiles } from "../../Components/Functions/constants";
 
 export function Createview() {
   const [inputValue, setInputValue] = useState({
@@ -21,9 +22,9 @@ export function Createview() {
 
   const handleOnClickEvent = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    const userProfiles = [{}];
-    
+
     userProfiles.push(inputValue);
+
     saveProfiles(userProfiles);
   };
 
@@ -39,6 +40,9 @@ export function Createview() {
     }));
   };
 
+  function checkInputValue() {
+    const inputs = inputValue;
+  }
   return (
     <>
       <div className="createview">
