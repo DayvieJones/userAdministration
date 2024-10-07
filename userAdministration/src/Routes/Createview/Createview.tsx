@@ -23,10 +23,63 @@ export function Createview() {
   const handleOnClickEvent = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
+    if (!checkInputValue()) return;
     userProfiles.push(inputValue);
+    console.log(userProfiles);
 
     saveProfiles(userProfiles);
   };
+
+  function checkInputValue() {
+    const inputs = inputValue;
+
+    if (!inputs.firstName) {
+      alert("Please enter text in the first name textfield");
+      return false;
+    }
+
+    if (!inputs.secondName) {
+      alert("Please enter text in the second name textfield");
+      return false;
+    }
+
+    if (!inputs.date) {
+      alert("Please choose a date");
+      return false;
+    }
+
+    if (!inputs.streetAdress) {
+      alert("Please enter text in the street address textfield");
+      return false;
+    }
+
+    if (!inputs.city) {
+      alert("Please enter the city in the textfield");
+      return false;
+    }
+
+    if (!inputs.mail) {
+      alert("Please enter your email address");
+      return false;
+    }
+
+    if (!inputs.phoneNumber) {
+      alert("Please enter your phone number");
+      return false;
+    }
+
+    if (!inputs.state) {
+      alert("Please enter text in the state textfield");
+      return false;
+    }
+
+    if (!inputs.zipCode) {
+      alert("Please enter text in the zip code textfield");
+      return false;
+    }
+
+    return true;
+  }
 
   const handleInputChangeEvent = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -40,9 +93,6 @@ export function Createview() {
     }));
   };
 
-  function checkInputValue() {
-    const inputs = inputValue;
-  }
   return (
     <>
       <div className="createview">
@@ -155,7 +205,7 @@ export function Createview() {
             <Button
               handleOnClickEvent={handleOnClickEvent}
               buttonContent={"Create"}
-              buttonType={"submit"} //prevent default
+              buttonType={"create"} //prevent default
             />
           </form>
         </div>

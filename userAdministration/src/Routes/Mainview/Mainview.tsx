@@ -8,6 +8,8 @@ function Mainview() {
   const test = getProfiles();
   console.log(test);
 
+  function display() {}
+
   return (
     <>
       <div className="index">
