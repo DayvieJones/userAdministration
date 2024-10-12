@@ -1,5 +1,10 @@
+import Createview from "../Createview/Createview";
 import "./Editview.scss";
 
 export default function Editview() {
-  return <div>Editview</div>;
+  return (
+    <div>
+      <Createview />
+    </div>
+  );
 }

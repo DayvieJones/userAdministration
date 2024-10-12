@@ -12,11 +12,13 @@ function Mainview() {
     <>
       <div className="index">
         <Sidebar />
-        <div className="index__mainView">
+        <div className="index__mainview">
           <h2>Mainview</h2>
-          {users.map((user) => (
-            <UserCard key={user.id} user={user} />
-          ))}
+          <div className="index__mainview__userCards">
+            {users.map((user) => (
+              <UserCard key={user.id} user={user} />
+            ))}
+          </div>
         </div>
       </div>
     </>

@@ -1,7 +1,6 @@
 import "./UserCard.scss";
 import myImage from "../../../public/src/assets/bryold_brakkson.jpeg";
 import { User } from "../../Types/User";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type UserCardProps = {
   user: User;
@@ -12,21 +11,26 @@ export default function UserCard({ user }: UserCardProps) {
     <div className="userCard">
       <div className="userCard__actionArea">
         <div className="userCard__media">
-          <img className="userCard_img" src={myImage} alt="profile picture" />
+          <img className="userCard__img" src={myImage} alt="profile picture" />
         </div>
         <div className="userCard__content">
           <h3 className="userCard__content__name">
-            {user.firstName}
-            {user.secondName}
+            <span className="userCard__content__firstName">
+              {user.firstName}
+            </span>
+            <span className="userCard__content__secondName">
+              {user.secondName}
+            </span>
           </h3>
           <div className="userCard__content__info-wrapper">
-            <p className="info__item">{user.birthdate}</p>
-            <p className="info__item">{user.streetAdress}</p>
-            <p className="info__item">{user.city}</p>
-            <p className="info__item">{user.state}</p>
-            <p className="info__item">{user.zipCode}</p>
-            <p className="info__item">{user.mail}</p>
-            <p className="info__item">{user.phoneNumber}</p>
+            <p className="userCard__content__info-item">{user.birthdate}</p>
+            <p className="userCard__content__info-item">{user.streetAdress}</p>
+            <p className="userCard__content__info-item">
+              {user.city} {user.state}
+            </p>
+            <p className="userCard__content__info-item">{user.zipCode}</p>
+            <p className="userCard__content__info-item">{user.mail}</p>
+            <p className="userCard__content__info-item">{user.phoneNumber}</p>
           </div>
         </div>
       </div>
