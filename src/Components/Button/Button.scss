@@ -1,0 +1,35 @@
+/*
+für top padding hälfte der fontsize
+left-right das doppelte der fontsize
+Golden ratio: Fibonacci Sequenz abgeleitet - horizontal * 1,618
+Rule of Sets: längere Seite * 1,5
+Silver Ratio: (japanische Architektur) - * 2,414
+PI-Seitenverhältnis: * 3.14159265359
+
+*/
+
+button {
+  width: 10rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin: 1rem calc(1rem * 1.618);
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.light-mode button {
+  background-color: var(--backgroundColorBright);
+  color: var(--textColorDark);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode button {
+  background-color: var(--backgroundColorDark);
+  color: var(--textColorBright);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
