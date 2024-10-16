@@ -1,28 +1,17 @@
+import { useContext } from "react";
 import UserForm from "../../Components/UserForm/UserForm";
+import { UserContext } from "../../Context/userContext";
+import { User } from "../../Types/User";
 import "./Createview.scss";
 
 export function Createview() {
-  const handleSubmitNewUser = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-    if (!checkInputValue()) return;
+  const { usersDispatch } = useContext(UserContext);
 
-    const user: User = {
-      id: getNextId(),
-      firstName: inputValue.firstName,
-      secondName: inputValue.secondName,
-      birthdate: inputValue.birthdate,
-      streetAdress: inputValue.streetAdress,
-      city: inputValue.city,
-      state: inputValue.state,
-      zipCode: inputValue.zipCode,
-      mail: inputValue.mail,
-      phoneNumber: inputValue.phoneNumber,
-    };
-
+  const handleSubmitNewUser = (user: User) => {
     usersDispatch({ type: "ADD_USER", user: user });
     alert("User added");
-    clearAllInputs();
   };
+
   return <UserForm user={null} onClick={handleSubmitNewUser} />;
 }
 

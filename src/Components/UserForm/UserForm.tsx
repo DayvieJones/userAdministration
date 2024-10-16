@@ -4,12 +4,14 @@ import Sidebar from "../Sidebar/Sidebar";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { User } from "../../Types/User";
+import getNextId from "../../Functions/getNextID";
 
 type UserFormProps = {
   user: User | null;
+  onClick: (user: User) => void;
 };
 
-function UserForm({ user }: UserFormProps) {
+function UserForm({ user, onClick }: UserFormProps) {
   const [inputValue, setInputValue] = useState({
     firstName: user?.firstName ?? "",
     secondName: user?.secondName ?? "",
@@ -99,6 +101,27 @@ function UserForm({ user }: UserFormProps) {
     }));
   };
 
+  function handleSubmitUser(event: { preventDefault: () => void }) {
+    if (checkInputValue()) {
+      const user: User = {
+        id: getNextId(),
+        firstName: inputValue.firstName,
+        secondName: inputValue.secondName,
+        birthdate: inputValue.birthdate,
+        streetAdress: inputValue.streetAdress,
+        city: inputValue.city,
+        state: inputValue.state,
+        zipCode: inputValue.zipCode,
+        mail: inputValue.mail,
+        phoneNumber: inputValue.phoneNumber,
+      };
+      onClick(user);
+      clearAllInputs();
+    } else {
+      event.preventDefault();
+      alert("Pleas fullfill the information");
+    }
+  }
   return (
     <div className="createview">
       <Sidebar />
@@ -213,7 +236,7 @@ function UserForm({ user }: UserFormProps) {
           {/* Submit Button */}
           <Button
             className="createview__form__button"
-            handleSubmitNewUser={() => {}}
+            handleSubmitNewUser={handleSubmitUser}
             buttonContent={"Create"}
             buttonType={"create"} //prevent default
           />
