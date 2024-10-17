@@ -25,3 +25,9 @@ function Button({
 }
 
 export default Button;
+
+/*
+TODO
+ClassName nicht übergeben sondern in der Komponente durch den type überprüfen
+
+*/

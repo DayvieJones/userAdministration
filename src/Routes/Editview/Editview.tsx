@@ -1,20 +1,25 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import UserForm from "../../Components/UserForm/UserForm";
 import { UserContext } from "../../Context/userContext";
 import "./Editview.scss";
 import { User } from "../../Types/User";
+import { useParams } from "react-router-dom";
 
 export default function Editview() {
-  const [user, setUser] = useState<>(null);
+  const [editUser, setEditUser] = useState<User | undefined>();
   const { users } = useContext(UserContext);
 
-  const handleUpdateUser = (user: User) => {
-    usersDispatch({ type: "UPDATE_USER", user: user });
-    alert("User updated");
-  };
+  const { id } = useParams();
+
+  useEffect(() => {
+    const user = users.find((user) => String(user.id) === id);
+    console.log(user);
+    setEditUser(user);
+  }, [users, id]);
+
   return (
     <div>
-      <UserForm user={null} onClick={handleUpdateUser} />
+      <UserForm user={editUser} onClick={() => {}} />
     </div>
   );
 }

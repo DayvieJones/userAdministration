@@ -40,3 +40,8 @@ export default function UserCard({ user }: UserCardProps) {
     </div>
   );
 }
+
+/*
+TODO
+DeleteButton hinzufügen entweder als eigene Komponente oder über die Button.tsx
+*/

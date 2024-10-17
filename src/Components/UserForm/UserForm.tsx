@@ -7,11 +7,13 @@ import { User } from "../../Types/User";
 import getNextId from "../../Functions/getNextID";
 
 type UserFormProps = {
-  user: User | null;
+  user: User | undefined;
   onClick: (user: User) => void;
 };
 
 function UserForm({ user, onClick }: UserFormProps) {
+  console.log(user);
+
   const [inputValue, setInputValue] = useState({
     firstName: user?.firstName ?? "",
     secondName: user?.secondName ?? "",
@@ -238,7 +240,7 @@ function UserForm({ user, onClick }: UserFormProps) {
             className="createview__form__button"
             handleSubmitNewUser={handleSubmitUser}
             buttonContent={"Create"}
-            buttonType={"create"} //prevent default
+            buttonType={"create"}
           />
         </form>
       </div>
