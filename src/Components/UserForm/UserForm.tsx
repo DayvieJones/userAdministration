@@ -237,7 +237,6 @@ function UserForm({ user, onClick }: UserFormProps) {
 
           {/* Submit Button */}
           <Button
-            className="createview__form__button"
             handleSubmitNewUser={handleSubmitUser}
             buttonContent={"Create"}
             buttonType={"create"}

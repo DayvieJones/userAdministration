@@ -11,7 +11,7 @@ export default function Sidebar() {
         <Button buttonType={"button"} buttonContent="Overview" />
       </Link>
       <Link to={"/createview"}>
-        <Button buttonType={"button"} buttonContent="Create User" />
+        <Button buttonType={"create"} buttonContent="Create User" />
       </Link>
     </div>
   );

@@ -1,7 +1,8 @@
 import "./UserCard.scss";
 import myImage from "../../../public/src/assets/bryold_brakkson.jpeg";
 import { User } from "../../Types/User";
-import DeleteButton from "../DeleteButton/DeleteButton";
+
+import Button from "../Button/Button";
 
 type UserCardProps = {
   user: User;
@@ -10,9 +11,8 @@ type UserCardProps = {
 export default function UserCard({ user }: UserCardProps) {
   return (
     <div className="userCard">
-      {/* <DeleteButton handleDelete={() => {}} className="DeleteButton" /> */}
-
       <div className="userCard__actionArea">
+        <Button buttonContent={"x"} buttonType={"delete"} />
         <div className="userCard__media">
           <img className="userCard__img" src={myImage} alt="profile picture" />
         </div>
