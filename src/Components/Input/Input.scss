@@ -7,29 +7,19 @@ input[type="date"] {
   display: -webkit-inline-flex;
   -webkit-padding-start: 1rem;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
-  width: 2rem;
-  height: 2rem;
-}
-input::-webkit-datetime-edit {
-  padding: 2rem;
-  // -webkit-flex: 1;
-  // -webkit-user-modify: read-only !important;
-  // display: inline-block;
-  // min-width: 0;
-  // overflow: hidden;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-input::-webkit-datetime-edit-fields-wrapper {
-  // -webkit-user-modify: read-only !important;
-  // display: inline-block;
-  // padding: 1px 0;
-  // white-space: pre;
+input::-webkit-datetime-edit {
+  padding: 2rem;
 }
 
 input {
-  width: 15rem;
-  height: 2rem;
+  width: 12rem;
+  height: 1rem;
   padding: 0.8rem;
   font-size: 1rem;
   border: 1px solid #ccc;

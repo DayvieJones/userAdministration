@@ -12,7 +12,6 @@ export default function UserCard({ user }: UserCardProps) {
   return (
     <div className="userCard">
       <div className="userCard__actionArea">
-        <Button buttonContent={"x"} buttonType={"delete"} />
         <div className="userCard__media">
           <img className="userCard__img" src={myImage} alt="profile picture" />
         </div>
@@ -36,6 +35,7 @@ export default function UserCard({ user }: UserCardProps) {
             <p className="userCard__content__info-item">{user.phoneNumber}</p>
           </div>
         </div>
+        <Button buttonContent={"X"} buttonType={"delete"} />
       </div>
     </div>
   );

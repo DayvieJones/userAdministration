@@ -9,31 +9,22 @@ PI-Seitenverhältnis: * 3.14159265359
 */
 
 button {
-  width: 10rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  width: 8rem;
   margin: 1rem calc(1rem * 1.618);
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.button__button {
-  width: 10rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  margin: 1rem calc(1rem * 1.618);
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+
+.button__delete {
+  width: 2rem;
+  height: 2rem;
+  margin: 0rem;
+  border-radius: 300px;
 }
+
 .light-mode button {
   background-color: var(--backgroundColorBright);
   color: var(--textColorDark);

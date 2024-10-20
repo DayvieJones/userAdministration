@@ -2,7 +2,7 @@ import "./Button.scss";
 
 interface ButtonInterface {
   className?: string;
-  buttonType?: string | undefined;
+  buttonType?: string;
   buttonContent: string;
   handleSubmitNewUser?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }

@@ -12,7 +12,6 @@ interface InputInterface {
 }
 
 export default function Input({
-  isError,
   name,
   inputType,
   inputValue,

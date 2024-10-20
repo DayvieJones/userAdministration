@@ -1,29 +1,36 @@
 .userCard {
-  padding: 1.2rem;
-  margin: 1.2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
   background-color: rgb(211, 211, 211);
   border-radius: 10px;
-  width: 25rem;
-  height: 20rem;
+  width: 30rem;
+  height: auto;
   border: 1px solid rgba(128, 128, 128, 0.5);
+
+  &__img {
+    max-width: 6rem;
+    height: auto;
+    border-radius: 8px;
+  }
 
   &__actionArea {
     display: flex;
   }
 
   &__media {
-    padding: 1.5rem;
+    padding: 1rem;
     border-right: 1px solid rgba(128, 128, 128, 0.5);
   }
 
   &__content {
-    padding: 1rem;
+    // padding: 1rem;
     display: flex;
     flex-direction: column;
     width: 100%;
 
     &__name {
       font-weight: bold;
+      margin: auto;
       gap: 0.5rem;
     }
 
@@ -43,8 +50,9 @@
     }
 
     &__info-item {
+      font-size: 0.9rem;
       text-align: center;
-      margin: 0.4rem;
+      margin: 0;
       width: 100%;
     }
   }
