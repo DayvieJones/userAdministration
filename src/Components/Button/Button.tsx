@@ -4,12 +4,11 @@ interface ButtonInterface {
   className?: string;
   buttonType?: string;
   buttonContent: string;
-  handleSubmitNewUser?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleOnClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 function checkButtonType(buttonProps: ButtonInterface) {
   const { buttonType, className } = buttonProps;
-  console.log("buttonType", buttonType);
 
   let resultClassName = className || "";
 
@@ -36,7 +35,7 @@ function checkButtonType(buttonProps: ButtonInterface) {
 function Button({
   buttonContent,
   buttonType,
-  handleSubmitNewUser,
+  handleOnClick,
   className,
 }: ButtonInterface) {
   const classNameResult = checkButtonType({
@@ -45,13 +44,14 @@ function Button({
     buttonContent: "",
   });
   return (
-    <button className={classNameResult} onClick={handleSubmitNewUser}>
+    <button className={classNameResult} onClick={handleOnClick}>
       {buttonContent}
     </button>
   );
 }
 
 export default Button;
+
 /*
 TODO
 ClassName nicht übergeben sondern in der Komponente durch den type überprüfen

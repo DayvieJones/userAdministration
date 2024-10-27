@@ -16,14 +16,17 @@ export default function userManagementReducer(
 
   switch (action.type) {
     case "ADD_USER": {
+      console.log("ADD_USER SUCCESSFUL");
       updatedState = [...prevState, action.user];
       break;
     }
     case "REMOVE_USER": {
+      console.log("REMOVE_USER SUCCESSFUL");
       updatedState = prevState.filter((user) => user.id !== action.user.id);
       break;
     }
     case "UPDATE_USER": {
+      console.log("UPDATE_USER SUCCESSFUL");
       updatedState = prevState.map((user) =>
         user.id === action.user.id ? action.user : user
       );

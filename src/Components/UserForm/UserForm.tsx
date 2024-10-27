@@ -12,8 +12,6 @@ type UserFormProps = {
 };
 
 function UserForm({ user, onClick }: UserFormProps) {
-  console.log(user);
-
   const [inputValue, setInputValue] = useState({
     firstName: user?.firstName ?? "",
     secondName: user?.secondName ?? "",
@@ -121,9 +119,9 @@ function UserForm({ user, onClick }: UserFormProps) {
       clearAllInputs();
     } else {
       event.preventDefault();
-      alert("Pleas fullfill the information");
     }
   }
+
   return (
     <div className="createview">
       <Sidebar />
@@ -237,7 +235,7 @@ function UserForm({ user, onClick }: UserFormProps) {
 
           {/* Submit Button */}
           <Button
-            handleSubmitNewUser={handleSubmitUser}
+            handleOnClick={handleSubmitUser}
             buttonContent={"Create"}
             buttonType={"create"}
           />
@@ -248,3 +246,9 @@ function UserForm({ user, onClick }: UserFormProps) {
 }
 
 export default UserForm;
+
+/*
+### TODO ###
+individual input message to fullfill the inputfield
+
+*/

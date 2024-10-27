@@ -1,14 +1,14 @@
 import "./UserCard.scss";
 import myImage from "../../../public/src/assets/bryold_brakkson.jpeg";
 import { User } from "../../Types/User";
-
 import Button from "../Button/Button";
 
 type UserCardProps = {
   user: User;
+  handleOnClick?: any;
 };
 
-export default function UserCard({ user }: UserCardProps) {
+export default function UserCard({ user, handleOnClick }: UserCardProps) {
   return (
     <div className="userCard">
       <div className="userCard__actionArea">
@@ -35,7 +35,11 @@ export default function UserCard({ user }: UserCardProps) {
             <p className="userCard__content__info-item">{user.phoneNumber}</p>
           </div>
         </div>
-        <Button buttonContent={"X"} buttonType={"delete"} />
+        <Button
+          handleOnClick={handleOnClick}
+          buttonContent={"X"}
+          buttonType={"delete"}
+        />
       </div>
     </div>
   );

@@ -4,9 +4,13 @@ import "./Mainview.scss";
 import {} from "../Createview/Createview";
 import { useContext } from "react";
 import { UserContext } from "../../Context/userContext";
-
+import { User } from "../../Types/User";
 function Mainview() {
-  const { users } = useContext(UserContext);
+  const { users, usersDispatch } = useContext(UserContext);
+
+  const handleDeleteButton = (user: User) => {
+    usersDispatch({ type: "REMOVE_USER", user });
+  };
 
   return (
     <>
@@ -16,7 +20,11 @@ function Mainview() {
           <h2>Mainview</h2>
           <div className="index__mainview__userCards">
             {users.map((user) => (
-              <UserCard key={user.id} user={user} />
+              <UserCard
+                key={user.id}
+                user={user}
+                handleOnClick={() => handleDeleteButton(user)}
+              />
             ))}
           </div>
         </div>
