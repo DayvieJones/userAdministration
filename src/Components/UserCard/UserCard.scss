@@ -1,11 +1,13 @@
+@import "../../variables";
+
 .userCard {
   padding: 0.5rem;
   margin: 0.5rem;
-  background-color: rgb(211, 211, 211);
+  background-color: $cardBackground_lightMode;
   border-radius: 10px;
   width: 30rem;
   height: auto;
-  border: 1px solid rgba(128, 128, 128, 0.5);
+  border: 1px solid $borderColor_lightMode;
 
   &__img {
     max-width: 6rem;
@@ -19,14 +21,14 @@
 
   &__media {
     padding: 1rem;
-    border-right: 1px solid rgba(128, 128, 128, 0.5);
+    border-right: 1px solid $borderColor_lightMode;
   }
 
   &__content {
-    // padding: 1rem;
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: $primary-text_lightMode;
 
     &__name {
       font-weight: bold;

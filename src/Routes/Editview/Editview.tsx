@@ -1,13 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import UserForm from "../../Components/UserForm/UserForm";
 import { UserContext } from "../../Context/userContext";
-import "./Editview.scss";
 import { User } from "../../Types/User";
 import { useParams } from "react-router-dom";
 
 export default function Editview() {
   const [editUser, setEditUser] = useState<User | undefined>();
-  const { users } = useContext(UserContext);
+  const { users, usersDispatch } = useContext(UserContext);
 
   const { id } = useParams();
 
@@ -17,9 +16,22 @@ export default function Editview() {
     setEditUser(user);
   }, [users, id]);
 
-  return (
-    <div>
-      <UserForm user={editUser} onClick={() => {}} />
-    </div>
-  );
+  function updateUser(user: User) {
+    usersDispatch({ type: "UPDATE_USER", user: user });
+    alert("User updated");
+  }
+
+  function displayUserForm() {
+    if (editUser) {
+      return (
+        <div>
+          <UserForm user={editUser} onClick={updateUser} />
+        </div>
+      );
+    } else {
+      return "User not found!";
+    }
+  }
+
+  return displayUserForm();
 }

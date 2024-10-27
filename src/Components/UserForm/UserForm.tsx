@@ -75,19 +75,19 @@ function UserForm({ user, onClick }: UserFormProps) {
     return true;
   }
 
-  function clearAllInputs() {
-    setInputValue({
-      firstName: "",
-      secondName: "",
-      birthdate: "",
-      streetAdress: "",
-      city: "",
-      state: "",
-      zipCode: "",
-      mail: "",
-      phoneNumber: "",
-    });
-  }
+  // function clearAllInputs() {
+  //   setInputValue({
+  //     firstName: "",
+  //     secondName: "",
+  //     birthdate: "",
+  //     streetAdress: "",
+  //     city: "",
+  //     state: "",
+  //     zipCode: "",
+  //     mail: "",
+  //     phoneNumber: "",
+  //   });
+  // }
 
   const handleInputChangeEvent = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -103,8 +103,8 @@ function UserForm({ user, onClick }: UserFormProps) {
 
   function handleSubmitUser(event: { preventDefault: () => void }) {
     if (checkInputValue()) {
-      const user: User = {
-        id: getNextId(),
+      const submittedUser: User = {
+        id: user?.id ?? getNextId(),
         firstName: inputValue.firstName,
         secondName: inputValue.secondName,
         birthdate: inputValue.birthdate,
@@ -115,8 +115,8 @@ function UserForm({ user, onClick }: UserFormProps) {
         mail: inputValue.mail,
         phoneNumber: inputValue.phoneNumber,
       };
-      onClick(user);
-      clearAllInputs();
+      onClick(submittedUser);
+      // clearAllInputs();
     } else {
       event.preventDefault();
     }
@@ -126,7 +126,7 @@ function UserForm({ user, onClick }: UserFormProps) {
     <div className="createview">
       <Sidebar />
       <div className="createview__content">
-        <h2 className="createview__title">Createview</h2>
+        {/* <h2 className="createview__title">Createview</h2> */}
         <form className="createview__form">
           {/* Name Section */}
           <fieldset className="createview__form__section">

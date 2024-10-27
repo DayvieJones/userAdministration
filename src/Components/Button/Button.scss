@@ -18,11 +18,19 @@ button {
   align-items: center;
 }
 
+// .button__button a {
+//   width: 8rem;
+// }
+
+button .button__button {
+  width: 8rem;
+}
+
 .button__delete {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin: 0rem;
-  border-radius: 300px;
+  border-radius: 30px;
 }
 
 .light-mode button {

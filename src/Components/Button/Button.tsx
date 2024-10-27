@@ -2,9 +2,11 @@ import "./Button.scss";
 
 interface ButtonInterface {
   className?: string;
-  buttonType?: string;
+  buttonType: string;
   buttonContent: string;
-  handleOnClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleOnClick?: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 }
 
 function checkButtonType(buttonProps: ButtonInterface) {

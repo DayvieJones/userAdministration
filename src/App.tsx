@@ -1,5 +1,5 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./Routes/Error/ErrorPage";
 import NoMatch from "./Routes/Error/NoMatch";
 import Mainview from "./Routes/Mainview/Mainview";

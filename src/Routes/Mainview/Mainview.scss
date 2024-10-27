@@ -1,6 +1,8 @@
+@import "../../variables";
+
 .index {
-  background-color: antiquewhite;
-  color: black;
+  background-color: $primary-color_lightMode;
+  color: $primary-text_lightMode;
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -8,13 +10,14 @@
 
   &__mainview {
     width: 80vw;
-    padding: 0rem 1rem;
+    padding: 1rem 1rem;
 
     gap: 1rem;
-    // overflow: auto;
     overflow: hidden;
-    &__userCards {
+
+    &__userCards a {
       display: grid;
+      width: 30rem;
     }
   }
 }
