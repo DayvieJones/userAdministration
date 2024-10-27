@@ -1,5 +1,7 @@
 import "./Button.scss";
+// import { DarkModeContext } from "../../Context/darkModeContext";
 
+// const { isDarkMode } = useContext(DarkModeContext);
 interface ButtonInterface {
   className?: string;
   buttonType: string;
@@ -33,7 +35,6 @@ function checkButtonType(buttonProps: ButtonInterface) {
   }
   return resultClassName;
 }
-
 function Button({
   buttonContent,
   buttonType,

@@ -1,5 +1,7 @@
 import "./Input.scss";
+// import { DarkModeContext } from "../../Context/darkModeContext";
 
+// const { isDarkMode } = useContext(DarkModeContext);
 interface InputInterface {
   isError?: boolean;
   name: string;

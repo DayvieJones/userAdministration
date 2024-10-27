@@ -3,7 +3,9 @@ import UserForm from "../../Components/UserForm/UserForm";
 import { UserContext } from "../../Context/userContext";
 import { User } from "../../Types/User";
 import { useParams } from "react-router-dom";
+// import { DarkModeContext } from "../../Context/darkModeContext";
 
+// const { isDarkMode } = useContext(DarkModeContext);
 export default function Editview() {
   const [editUser, setEditUser] = useState<User | undefined>();
   const { users, usersDispatch } = useContext(UserContext);

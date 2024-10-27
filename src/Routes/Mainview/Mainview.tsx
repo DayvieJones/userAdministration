@@ -6,6 +6,9 @@ import { MouseEvent, useContext } from "react";
 import { UserContext } from "../../Context/userContext";
 import { User } from "../../Types/User";
 import { Link } from "react-router-dom";
+// import { DarkModeContext } from "../../Context/darkModeContext";
+
+// const { isDarkMode } = useContext(DarkModeContext);
 
 function Mainview() {
   const { users, usersDispatch } = useContext(UserContext);

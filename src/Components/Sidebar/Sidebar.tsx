@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Sidebar.scss";
+// import { DarkModeContext } from "../../Context/darkModeContext";
 
+// const { isDarkMode } = useContext(DarkModeContext);
 export default function Sidebar() {
   return (
     <div className="sidebar">
