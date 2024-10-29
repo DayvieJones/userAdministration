@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .createview {
   background-color: antiquewhite;
   color: black;
@@ -7,9 +9,9 @@
   width: 100vw;
 
   &__content {
-    width: 80vw;
-    padding: 0rem 1rem;
-    margin: 3rem 0rem 0rem 1rem;
+    width: 85vw;
+    padding: 2rem 2rem;
+    // margin: 3rem 0rem 0rem 1rem;
   }
 
   &__form {
@@ -29,6 +31,10 @@
       font-weight: bold;
       text-align: left;
       border: none;
+
+      .--inputRequired {
+        color: $danger;
+      }
     }
 
     &__group {

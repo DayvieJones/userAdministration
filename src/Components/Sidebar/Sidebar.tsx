@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Sidebar.scss";
-import imgLogo from "../../../public/src/Assets/logo_user_administration.png";
+import imgLogo from "../../../public/logo_user_administration.png";
 
 // import { DarkModeContext } from "../../Context/darkModeContext";
 
@@ -14,7 +14,7 @@ export default function Sidebar() {
         <img src={imgLogo} alt="user administration logo" />
       </div>
       <div className="sidebar__buttons">
-        <Link to={"//"}>
+        <Link to={"/"}>
           <Button buttonType={"button"} buttonContent="Overview" />
         </Link>
         <Link to={"/createview"}>

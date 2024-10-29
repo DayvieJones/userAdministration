@@ -27,7 +27,7 @@ export default function Editview() {
     if (editUser) {
       return (
         <div>
-          <UserForm user={editUser} onClick={updateUser} />
+          <UserForm user={editUser} onClick={updateUser} type={"update"} />
         </div>
       );
     } else {
