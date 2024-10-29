@@ -10,7 +10,7 @@ import userManagementReducer from "./Hooks/userManagementReducer";
 import { UserContext } from "./Context/userContext";
 import { User } from "./Types/User";
 import { LOCAL_STORAGE_PROFILES } from "./Functions/constants";
-import { DarkModeContext } from "./Context/darkModeContext";
+// import { DarkModeContext } from "./Context/darkModeContext";
 
 function App() {
   const router = createBrowserRouter(

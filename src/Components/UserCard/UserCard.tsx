@@ -1,5 +1,5 @@
 import "./UserCard.scss";
-import myImage from "../../../public/src/assets/bryold_brakkson.jpeg";
+import myImage from "../../../public/bryold_brakkson.jpeg";
 import { User } from "../../Types/User";
 import Button from "../Button/Button";
 // import { DarkModeContext } from "../../Context/darkModeContext";
