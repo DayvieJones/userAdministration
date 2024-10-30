@@ -6,8 +6,6 @@ import { MouseEvent, useContext } from "react";
 import { UserContext } from "../../Context/userContext";
 import { User } from "../../Types/User";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
 // import { DarkModeContext } from "../../Context/darkModeContext";
 
 // const { isDarkMode } = useContext(DarkModeContext);
@@ -29,7 +27,6 @@ function Mainview() {
         <Sidebar />
         <div className="index__mainview">
           {/* <h2>Mainview</h2> */}
-          <FontAwesomeIcon icon={faPhone} />
           <div className="index__mainview__userCards">
             {users.map((user) => (
               <Link to={`/editview/${user.id}`} key={`usercardlink-${user.id}`}>

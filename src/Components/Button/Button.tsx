@@ -57,6 +57,6 @@ export default Button;
 
 /*
 TODO
-ClassName nicht übergeben sondern in der Komponente durch den type überprüfen
+ClassName nicht übergeben sondern in der Komponente durch den type überprüfen DONE
 
 */
