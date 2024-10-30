@@ -14,7 +14,9 @@ export function Createview() {
     alert("User added");
   };
 
-  return <UserForm user={undefined} onClick={handleSubmitNewUser} />;
+  return (
+    <UserForm user={undefined} onClick={handleSubmitNewUser} type={"create"} />
+  );
 }
 
 export default Createview;

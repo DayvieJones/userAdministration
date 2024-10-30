@@ -12,9 +12,10 @@ import getNextId from "../../Functions/getNextID";
 type UserFormProps = {
   user: User | undefined;
   onClick: (user: User) => void;
+  type: "create" | "update";
 };
 
-function UserForm({ user, onClick }: UserFormProps) {
+function UserForm({ user, onClick, type }: UserFormProps) {
   const [inputValue, setInputValue] = useState({
     firstName: user?.firstName ?? "",
     secondName: user?.secondName ?? "",
@@ -133,7 +134,9 @@ function UserForm({ user, onClick }: UserFormProps) {
         <form className="createview__form">
           {/* Name Section */}
           <fieldset className="createview__form__section">
-            <legend className="createview__form__legend">Name</legend>
+            <legend className="createview__form__legend">
+              Names <span className="----inputRequired">*</span>
+            </legend>
             <div className="createview__form__group">
               <div className="createview__form__input">
                 <Input
@@ -156,7 +159,9 @@ function UserForm({ user, onClick }: UserFormProps) {
 
           {/* Birth Date Section */}
           <fieldset className="createview__form__section">
-            <legend className="createview__form__legend">Birth Date</legend>
+            <legend className="createview__form__legend">
+              Birth Date <span className="--inputRequired">*</span>
+            </legend>
             <div className="createview__form__group">
               <div className="createview__form__input">
                 <Input
@@ -174,7 +179,9 @@ function UserForm({ user, onClick }: UserFormProps) {
 
           {/* Address Section */}
           <fieldset className="createview__form__section">
-            <legend className="createview__form__legend">Address</legend>
+            <legend className="createview__form__legend">
+              Address <span className="--inputRequired">*</span>
+            </legend>
             <div className="createview__form__group">
               <div className="createview__form__input">
                 <Input
@@ -212,7 +219,7 @@ function UserForm({ user, onClick }: UserFormProps) {
           {/* Contact Information Section */}
           <fieldset className="createview__form__section">
             <legend className="createview__form__legend">
-              Contact Information
+              Contact Information <span className="--inputRequired">*</span>
             </legend>
             <div className="createview__form__group">
               <div className="createview__form__input">
