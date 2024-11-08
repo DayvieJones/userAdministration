@@ -1,15 +1,15 @@
 @import "../../variables.scss";
 
 .createview {
-  background-color: antiquewhite;
-  color: black;
+  background-color: var(--primary-color);
+  color: var(--primary-text);
   display: flex;
   flex-direction: row;
   height: 100vh;
   width: 100vw;
 
   &__content {
-    width: 85vw;
+    max-width: 85vw;
     padding: 2rem 2rem;
     // margin: 3rem 0rem 0rem 1rem;
   }
@@ -62,11 +62,11 @@
   // Fehlerstil für später
   &--error {
     input {
-      border-color: #dc3545;
+      border-color: $danger;
 
       &:focus {
-        border-color: #dc3545;
-        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+        border-color: $danger;
+        box-shadow: $boxShadowDanger;
       }
     }
   }

@@ -1,20 +1,22 @@
+@import "../../variables.scss";
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
 input[type="date"] {
-  display: -webkit-inline-flex;
-  -webkit-padding-start: 1rem;
+  // display: -webkit-inline-flex;
+  // -webkit-padding-start: 1rem;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-  width: 1.5rem;
+  width: 1.2rem;
   height: 1.5rem;
 }
 
 input::-webkit-datetime-edit {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 input {
@@ -22,27 +24,28 @@ input {
   height: 1rem;
   padding: 0.8rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: $inputBorder;
   border-radius: 15px;
   transition: border-color 0.3s ease;
+  background-color: var(--inputBackground);
 
   &::placeholder {
-    color: #a5a5a5;
+    color: $placeholder;
     text-align: center;
   }
 
   &:hover {
-    border-color: #888;
+    border-color: $borderColor;
   }
 
   &:focus {
-    border-color: #00a2ff;
+    border-color: $focusInput;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: $boxShadowFocus;
   }
 
   &:disabled {
-    background-color: #f0f0f0;
+    background-color: $disabled;
     cursor: not-allowed;
   }
 }

@@ -1,4 +1,32 @@
+@import "./variables";
+
 #root {
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
+  --primary-color: #faebd7;
+  --secondary-color: cadetblue;
+  --primary-text: #000000;
+  --secondary-text: #ffffff;
+
+  --cardBackground: rgb(211, 211, 211);
+  --inputBackground: #161616;
+  --borderColor: rgba(128, 128, 128, 0.5);
+  --buttonBorderColor: rgb(255, 255, 255);
+  --inputBorder: 1px solid #ccc;
+  --placeholder: #a5a5a5;
+}
+
+* {
+  &.dark {
+    --primary-color: #232a33;
+    --secondary-color: #3f3f3f;
+    --primary-text: #e2dfdf;
+    --secondary-text: #000000;
+
+    --inputBackground: rgba(83, 94, 128, 0.133);
+    --cardBackground: rgba(175, 175, 175, 0.534);
+    --borderColor: rgba(128, 128, 128, 0.5);
+    --buttonBorderColor: rgb(255, 255, 255);
+    --inputBorder: 1px solid #ccc;
+  }
 }

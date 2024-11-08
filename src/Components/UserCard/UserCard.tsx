@@ -38,9 +38,10 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
             </span>
           </h3>
           <div className="userCard__content__info-wrapper">
-            <p className="userCard__content__info-item">
-              <FontAwesomeIcon icon={faCakeCandles} /> {user.birthdate}
-            </p>
+            <span className="userCard__content__info-item">
+              <FontAwesomeIcon icon={faCakeCandles} />
+              {user.birthdate}
+            </span>
             <p className="userCard__content__info-item">
               <FontAwesomeIcon icon={faAddressBook} />
               {user.streetAdress}

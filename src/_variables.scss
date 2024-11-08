@@ -1,11 +1,29 @@
-$primary-color_lightMode: antiquewhite;
-$secondary-color_lightMode: cadetblue;
-$primary-text_lightMode: #000000;
-$secondary-text_lightMode: #ffffff;
+$primary-color: #faebd7;
+$secondary-color: cadetblue;
+$primary-text: #000000;
+$secondary-text: #ffffff;
 
-$cardBackground_lightMode: rgb(211, 211, 211);
+$cardBackground: rgb(211, 211, 211);
+$blackBackground: #000000;
+$borderColor: rgba(128, 128, 128, 0.5);
+$buttonBorderColor: rgb(255, 255, 255);
+$inputBorder: 1px solid #ccc;
+$placeholder: #a5a5a5;
 
-$borderColor_lightMode: rgba(128, 128, 128, 0.5);
+// darkmode
+// $primary-color_darkMode: #3d4652;
+// $secondary-color_darkMode: #5e3d3c;
+// $primary-text_darkMode: #ffffff;
+// $secondary-text_darkMode: #000000;
 
-$danger: rgb(255, 0, 0);
-// Darkmode
+// $cardBackground_darkMode: rgb(211, 211, 211);
+// $borderColor_darkMode: rgba(128, 128, 128, 0.5);
+// $buttonBorderColor_darkMode: rgb(255, 255, 255);
+// $inputBorder_lightMode: 1px solid #ccc;
+
+// extra
+$danger: #dc3545;
+$boxShadowDanger: 0 0 0 3px rgba(220, 53, 69, 0.25);
+$boxShadowFocus: 0 0 0 3px rgba(0, 123, 255, 0.25);
+$focusInput: #00a2ff;
+$disabled: #f0f0f0;

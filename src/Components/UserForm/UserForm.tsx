@@ -12,7 +12,7 @@ import getNextId from "../../Functions/getNextID";
 type UserFormProps = {
   user: User | undefined;
   onClick: (user: User) => void;
-  type: "create" | "update";
+  type: "Create" | "Update";
 };
 
 function UserForm({ user, onClick, type }: UserFormProps) {
@@ -79,20 +79,6 @@ function UserForm({ user, onClick, type }: UserFormProps) {
     return true;
   }
 
-  // function clearAllInputs() {
-  //   setInputValue({
-  //     firstName: "",
-  //     secondName: "",
-  //     birthdate: "",
-  //     streetAdress: "",
-  //     city: "",
-  //     state: "",
-  //     zipCode: "",
-  //     mail: "",
-  //     phoneNumber: "",
-  //   });
-  // }
-
   const handleInputChangeEvent = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -120,7 +106,6 @@ function UserForm({ user, onClick, type }: UserFormProps) {
         phoneNumber: inputValue.phoneNumber,
       };
       onClick(submittedUser);
-      // clearAllInputs();
     } else {
       event.preventDefault();
     }
@@ -135,7 +120,7 @@ function UserForm({ user, onClick, type }: UserFormProps) {
           {/* Name Section */}
           <fieldset className="createview__form__section">
             <legend className="createview__form__legend">
-              Names <span className="----inputRequired">*</span>
+              Names <span className="--inputRequired">*</span>
             </legend>
             <div className="createview__form__group">
               <div className="createview__form__input">
@@ -246,7 +231,7 @@ function UserForm({ user, onClick, type }: UserFormProps) {
           {/* Submit Button */}
           <Button
             handleOnClick={handleSubmitUser}
-            buttonContent={"Create"}
+            buttonContent={type}
             buttonType={"create"}
           />
         </form>

@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 /*
 für top padding hälfte der fontsize
 left-right das doppelte der fontsize
@@ -5,7 +7,6 @@ Golden ratio: Fibonacci Sequenz abgeleitet - horizontal * 1,618
 Rule of Sets: längere Seite * 1,5
 Silver Ratio: (japanische Architektur) - * 2,414
 PI-Seitenverhältnis: * 3.14159265359
-
 */
 
 button {
@@ -16,14 +17,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-// .button__button a {
-//   width: 8rem;
-// }
-
-button .button__button {
-  width: 8rem;
+  border-color: solid 1px $buttonBorderColor;
 }
 
 .button__delete {
@@ -31,16 +25,4 @@ button .button__button {
   height: 1.5rem;
   margin: 0rem;
   border-radius: 30px;
-}
-
-.light-mode button {
-  background-color: var(--backgroundColorBright);
-  color: var(--textColorDark);
-  border: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.dark-mode button {
-  background-color: var(--backgroundColorDark);
-  color: var(--textColorBright);
-  border: 1px solid rgba(255, 255, 255, 0.5);
 }

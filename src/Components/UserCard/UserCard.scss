@@ -2,12 +2,13 @@
 
 .userCard {
   padding: 0.5rem;
-  margin: 0.5rem;
-  background-color: $cardBackground_lightMode;
+  margin: 0 0.5rem 0.5rem 0;
+
+  background-color: var(--cardBackground);
   border-radius: 10px;
   width: 30rem;
   height: auto;
-  border: 1px solid $borderColor_lightMode;
+  border: 1px solid var(--borderColor);
 
   &__img {
     max-width: 5rem;
@@ -22,14 +23,14 @@
 
   &__media {
     padding: 1rem;
-    border-right: 1px solid $borderColor_lightMode;
+    border-right: 1px solid var(--borderColor);
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     width: 100%;
-    color: $primary-text_lightMode;
+    color: var(--primary-text);
 
     &__name {
       font-weight: bold;

@@ -10,7 +10,7 @@ import userManagementReducer from "./Hooks/userManagementReducer";
 import { UserContext } from "./Context/userContext";
 import { User } from "./Types/User";
 import { LOCAL_STORAGE_PROFILES } from "./Functions/constants";
-// import { DarkModeContext } from "./Context/darkModeContext";
+import { DarkModeContext } from "./Context/darkModeContext";
 
 function App() {
   const router = createBrowserRouter(
@@ -28,7 +28,7 @@ function App() {
     ],
     { basename: "/userAdministration" }
   );
-  // const [isDarkMode, setDarkMode] = useState(false);
+  const [isDarkMode, setDarkMode] = useState(false);
   const [users, usersDispatch] = useReducer(
     userManagementReducer,
     [],
@@ -44,11 +44,13 @@ function App() {
   }
 
   return (
-    // <DarkModeContext.Provider value={{ isDarkMode, setDarkMode }}>
-    <UserContext.Provider value={{ users, usersDispatch }}>
-      <RouterProvider router={router} />
-    </UserContext.Provider>
-    // </DarkModeContext.Provider>
+    <DarkModeContext.Provider value={{ isDarkMode, setDarkMode }}>
+      <div className={isDarkMode ? "dark" : ""}>
+        <UserContext.Provider value={{ users, usersDispatch }}>
+          <RouterProvider router={router} />
+        </UserContext.Provider>
+      </div>
+    </DarkModeContext.Provider>
   );
 }
 

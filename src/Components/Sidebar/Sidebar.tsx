@@ -3,13 +3,22 @@ import Button from "../Button/Button";
 import "./Sidebar.scss";
 import imgLogo from "../../../public/logo_user_administration.png";
 
-// import { DarkModeContext } from "../../Context/darkModeContext";
+import { useContext } from "react";
+import { DarkModeContext } from "../../Context/darkModeContext";
+import { Switch } from "../Switch/Switch";
 
-// const { isDarkMode } = useContext(DarkModeContext);
 export default function Sidebar() {
+  const { isDarkMode, setDarkMode } = useContext(DarkModeContext);
+
   return (
     <div className="sidebar">
       {/* <h2>Sidebar</h2> */}
+      <Switch
+        handleOnChangeEvent={() => {
+          setDarkMode(!isDarkMode);
+        }}
+      />
+
       <div className="sidebar__logo">
         <img src={imgLogo} alt="user administration logo" />
       </div>

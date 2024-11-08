@@ -15,7 +15,7 @@ export function Createview() {
   };
 
   return (
-    <UserForm user={undefined} onClick={handleSubmitNewUser} type={"create"} />
+    <UserForm user={undefined} onClick={handleSubmitNewUser} type={"Create"} />
   );
 }
 
