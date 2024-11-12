@@ -1,12 +1,13 @@
 @import "./variables";
 
 #root {
-  margin: 0;
+  // margin: 0;
   text-align: center;
   --primary-color: #faebd7;
   --secondary-color: cadetblue;
   --primary-text: #000000;
   --secondary-text: #ffffff;
+  --ternary-text: #ffffff;
 
   --cardBackground: rgb(211, 211, 211);
   --inputBackground: #161616;
@@ -18,13 +19,15 @@
 
 * {
   &.dark {
-    --primary-color: #232a33;
-    --secondary-color: #3f3f3f;
-    --primary-text: #e2dfdf;
-    --secondary-text: #000000;
+    --primary-color: #111111;
+    --secondary-color: #232a33;
+    --primary-text: #c7c7c7;
+    --secondary-text: #232a33;
+    --ternary-text: #ffffff;
 
     --inputBackground: rgba(83, 94, 128, 0.133);
-    --cardBackground: rgba(175, 175, 175, 0.534);
+    // --cardBackground: rgba(175, 175, 175, 0.534);
+    --cardBackground: #232a33;
     --borderColor: rgba(128, 128, 128, 0.5);
     --buttonBorderColor: rgb(255, 255, 255);
     --inputBorder: 1px solid #ccc;

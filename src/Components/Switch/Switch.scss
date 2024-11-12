@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  color: var(--ternary-text)
 }
 
 /* The switch - the box around the slider */
@@ -45,7 +46,7 @@
   border-radius: 20px;
   left: 0.3em;
   bottom: 0.3em;
-  background-color: var(--text-primary);
+  background-color: var(--primary-text);
   transition: 0.4s;
 }
 

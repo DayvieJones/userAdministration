@@ -17,7 +17,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-color: solid 1px $buttonBorderColor;
+  border-color: solid 1px var(--buttonBorderColor);
 }
 
 .button__delete {

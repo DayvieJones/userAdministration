@@ -8,6 +8,7 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="date"] {
   // display: -webkit-inline-flex;
   // -webkit-padding-start: 1rem;
+  // color: var(--primary-text);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
