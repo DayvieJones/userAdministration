@@ -1,7 +1,5 @@
 import "./Button.scss";
-// import { DarkModeContext } from "../../Context/darkModeContext";
 
-// const { isDarkMode } = useContext(DarkModeContext);
 interface ButtonInterface {
   className?: string;
   buttonType: string;
@@ -54,9 +52,3 @@ function Button({
 }
 
 export default Button;
-
-/*
-TODO
-ClassName nicht übergeben sondern in der Komponente durch den type überprüfen DONE
-
-*/

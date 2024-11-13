@@ -3,7 +3,6 @@ import myImage from "../../../public/bryold_brakkson.jpeg";
 import { User } from "../../Types/User";
 import Button from "../Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
   faPhone,
   faEnvelope,
@@ -13,9 +12,6 @@ import {
   faCity,
 } from "@fortawesome/free-solid-svg-icons";
 
-// import { DarkModeContext } from "../../Context/darkModeContext";
-
-// const { isDarkMode } = useContext(DarkModeContext);
 type UserCardProps = {
   user: User;
   handleOnClick?: any;

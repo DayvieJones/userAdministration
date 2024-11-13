@@ -4,9 +4,8 @@ export default function saveToLocalStorage(userProfiles: {}[]) {
   try {
     localStorage.setItem(LOCAL_STORAGE_PROFILES, JSON.stringify(userProfiles));
   } catch (error) {
-    alert("Alarm!");
+    alert("Alarm with Local Storage!");
   }
-
   return;
 }
 

@@ -12,12 +12,23 @@ PI-Seitenverhältnis: * 3.14159265359
 button {
   width: 8rem;
   margin: 1rem calc(1rem * 1.618);
-  cursor: pointer;
-  transition: border-color 0.25s;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
   display: flex;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.25s;
+  font-family: inherit;
+  font-weight: 500;
   justify-content: center;
   align-items: center;
-  border-color: solid 1px var(--buttonBorderColor);
+  border-color: solid 1px var(--borderColor);
+  background-color: var(--buttonBackground);
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid #646cff;
+  }
 }
 
 .button__delete {
