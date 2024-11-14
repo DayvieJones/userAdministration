@@ -3,10 +3,10 @@ import UserCard from "../../Components/UserCard/UserCard";
 import "./Mainview.scss";
 import {} from "../Createview/Createview";
 import { MouseEvent, useContext } from "react";
-import { UserContext } from "../../Context/userContext";
 import { User } from "../../Types/User";
 import { Link } from "react-router-dom";
-import { fetchRandomUserData } from "../../Functions/fetchRandomUserData";
+import { UserContext } from "../../Context/userContext";
+
 function Mainview() {
   const { users, usersDispatch } = useContext(UserContext);
 
@@ -17,17 +17,6 @@ function Mainview() {
     event?.preventDefault();
     usersDispatch({ type: "REMOVE_USER", user });
   };
-
-  fetchRandomUserData()
-    .then((result) => {
-      console.log("Result:", result[0]); // JSON-Inhalt anzeigen
-    })
-    .catch((error) => {
-      console.log("Error Catch:", error);
-    })
-    .finally(() => {
-      console.log("Fetching random picture successful");
-    });
 
   return (
     <>

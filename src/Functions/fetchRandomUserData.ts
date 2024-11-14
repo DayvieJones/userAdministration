@@ -1,5 +1,3 @@
-// import { LOCAL_STORAGE_RANDOMUSERDATA } from "./constants";
-
 export async function fetchRandomUserData() {
   try {
     const response = await fetch("https://randomuser.me/api/");
@@ -11,6 +9,7 @@ export async function fetchRandomUserData() {
     const body = await response.json();
 
     const randomUser = body.results;
+
     return randomUser;
   } catch (error) {
     throw error;

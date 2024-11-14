@@ -1,4 +1,5 @@
 import "./App.scss";
+import "./Styles/MediaQuerys.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./Routes/Error/ErrorPage";
 import NoMatch from "./Routes/Error/NoMatch";

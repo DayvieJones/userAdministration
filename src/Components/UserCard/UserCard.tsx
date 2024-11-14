@@ -1,4 +1,5 @@
 import "./UserCard.scss";
+import "../../Styles/MediaQuerys.scss";
 import myImage from "../../../public/bryold_brakkson.jpeg";
 import { User } from "../../Types/User";
 import Button from "../Button/Button";
@@ -11,6 +12,8 @@ import {
   faCakeCandles,
   faCity,
 } from "@fortawesome/free-solid-svg-icons";
+import { fetchRandomUserData } from "../../Functions/fetchRandomUserData";
+import { useEffect, useState } from "react";
 
 type UserCardProps = {
   user: User;
@@ -18,11 +21,29 @@ type UserCardProps = {
 };
 
 export default function UserCard({ user, handleOnClick }: UserCardProps) {
+  const [imgSrc, setImgSrc] = useState<string>("");
+
+  useEffect(() => {
+    const getRandomPicture = async () => {
+      try {
+        const result = await fetchRandomUserData();
+        setImgSrc(result[0].picture.large);
+      } catch (error) {
+        console.error("Error fetching random user picture:", error);
+      }
+    };
+    getRandomPicture();
+  }, []);
+
   return (
     <div className="userCard">
       <div className="userCard__actionArea">
         <div className="userCard__media">
-          <img className="userCard__img" src={myImage} alt="profile picture" />
+          <img
+            className="userCard__img"
+            src={imgSrc || myImage}
+            alt="profile picture"
+          />
         </div>
         <div className="userCard__content">
           <h3 className="userCard__content__name">
@@ -38,26 +59,26 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
               <FontAwesomeIcon icon={faCakeCandles} />
               {user.birthdate}
             </span>
-            <p className="userCard__content__info-item">
+            <span className="userCard__content__info-item">
               <FontAwesomeIcon icon={faAddressBook} />
               {user.streetAdress}
-            </p>
-            <p className="userCard__content__info-item">
+            </span>
+            <span className="userCard__content__info-item">
               <span>
                 <FontAwesomeIcon icon={faCity} /> {user.city} {user.state}{" "}
                 {user.zipCode}
               </span>
-            </p>
-            <p className="userCard__content__info-item">
+            </span>
+            <span className="userCard__content__info-item">
               <span>
                 <FontAwesomeIcon icon={faEnvelope} /> {user.mail}
               </span>
-            </p>
-            <p className="userCard__content__info-item">
+            </span>
+            <span className="userCard__content__info-item">
               <span>
                 <FontAwesomeIcon icon={faPhone} /> {user.phoneNumber}
               </span>
-            </p>
+            </span>
           </div>
         </div>
         <Button
