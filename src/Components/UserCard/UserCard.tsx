@@ -64,20 +64,14 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
               {user.streetAdress}
             </span>
             <span className="userCard__content__info-item">
-              <span>
-                <FontAwesomeIcon icon={faCity} /> {user.city} {user.state}{" "}
-                {user.zipCode}
-              </span>
+              <FontAwesomeIcon icon={faCity} /> {user.city} {user.state}{" "}
+              {user.zipCode}
             </span>
             <span className="userCard__content__info-item">
-              <span>
-                <FontAwesomeIcon icon={faEnvelope} /> {user.mail}
-              </span>
+              <FontAwesomeIcon icon={faEnvelope} /> {user.mail}
             </span>
             <span className="userCard__content__info-item">
-              <span>
-                <FontAwesomeIcon icon={faPhone} /> {user.phoneNumber}
-              </span>
+              <FontAwesomeIcon icon={faPhone} /> {user.phoneNumber}
             </span>
           </div>
         </div>

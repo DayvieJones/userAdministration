@@ -44,6 +44,7 @@
     &__info-wrapper {
       display: flex;
       flex-direction: column;
+
       &__body {
         display: grid;
         flex-direction: row;
@@ -54,12 +55,15 @@
     &__info-item {
       display: flex;
       font-size: 0.9rem;
+      align-items: center;
       text-align: left;
       margin: 0;
       width: 100%;
       gap: 1rem;
+
       svg {
         margin: 0 0.5rem;
+        width: 1.1rem;
       }
     }
   }
