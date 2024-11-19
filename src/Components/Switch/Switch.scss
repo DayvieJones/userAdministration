@@ -2,10 +2,14 @@
 
 .container-switch {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  color: var(--ternary-text)
+  margin: 0.5rem 1.5rem;
+  .container-text {
+    margin: 0 0 0.5rem 0;
+    color: var(--ternary-text);
+  }
 }
 
 /* The switch - the box around the slider */
@@ -28,6 +32,7 @@
 .slider {
   position: absolute;
   cursor: pointer;
+  width: 3.8rem;
   top: 0;
   left: 0;
   right: 0;

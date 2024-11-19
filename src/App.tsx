@@ -29,6 +29,7 @@ function App() {
     ],
     { basename: "/userAdministration" }
   );
+
   const [isDarkMode, setDarkMode] = useState(false);
   const [users, usersDispatch] = useReducer(
     userManagementReducer,
