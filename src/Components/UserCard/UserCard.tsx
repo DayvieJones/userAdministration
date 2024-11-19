@@ -27,7 +27,13 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
     const getRandomPicture = async () => {
       try {
         const result = await fetchRandomUserData();
-        setImgSrc(result[0].picture.large);
+        const pictureUrl = result[0].picture.large;
+        setImgSrc(pictureUrl);
+
+        user.imageSource = pictureUrl;
+
+        //Update local storage
+        localStorage.setItem("users", JSON.stringify(user));
       } catch (error) {
         console.error("Error fetching random user picture:", error);
       }
@@ -57,27 +63,25 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
           <div className="userCard__content__info-wrapper">
             <span className="userCard__content__info-item">
               <FontAwesomeIcon icon={faCakeCandles} />
-              {user.birthdate}
+              {new Date(user.birthdate).toLocaleDateString("de-DE", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              })}
             </span>
             <span className="userCard__content__info-item">
               <FontAwesomeIcon icon={faAddressBook} />
               {user.streetAdress}
             </span>
             <span className="userCard__content__info-item">
-              <span>
-                <FontAwesomeIcon icon={faCity} /> {user.city} {user.state}{" "}
-                {user.zipCode}
-              </span>
+              <FontAwesomeIcon icon={faCity} /> {user.city} {user.state}{" "}
+              {user.zipCode}
             </span>
             <span className="userCard__content__info-item">
-              <span>
-                <FontAwesomeIcon icon={faEnvelope} /> {user.mail}
-              </span>
+              <FontAwesomeIcon icon={faEnvelope} /> {user.mail}
             </span>
             <span className="userCard__content__info-item">
-              <span>
-                <FontAwesomeIcon icon={faPhone} /> {user.phoneNumber}
-              </span>
+              <FontAwesomeIcon icon={faPhone} /> {user.phoneNumber}
             </span>
           </div>
         </div>

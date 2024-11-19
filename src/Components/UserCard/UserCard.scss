@@ -53,6 +53,7 @@
 
     &__info-item {
       display: flex;
+      justify-items: center;
       font-size: 0.9rem;
       text-align: left;
       margin: 0;
@@ -60,6 +61,7 @@
       gap: 1rem;
       svg {
         margin: 0 0.5rem;
+        width: 1.1rem;
       }
     }
   }

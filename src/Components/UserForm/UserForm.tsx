@@ -26,6 +26,7 @@ function UserForm({ user, onClick, type }: UserFormProps) {
     zipCode: user?.zipCode ?? "",
     mail: user?.mail ?? "",
     phoneNumber: user?.phoneNumber ?? "",
+    imageSource: user?.imageSource ?? "",
   });
 
   function checkInputValue() {
@@ -104,6 +105,7 @@ function UserForm({ user, onClick, type }: UserFormProps) {
         zipCode: inputValue.zipCode,
         mail: inputValue.mail,
         phoneNumber: inputValue.phoneNumber,
+        imageSource: user?.imageSource ?? "",
       };
       onClick(submittedUser);
     } else {

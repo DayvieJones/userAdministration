@@ -2,14 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import UserForm from "../../Components/UserForm/UserForm";
 import { UserContext } from "../../Context/userContext";
 import { User } from "../../Types/User";
-import { useParams } from "react-router-dom";
-// import { DarkModeContext } from "../../Context/darkModeContext";
+import { useNavigate, useParams } from "react-router-dom";
 
-// const { isDarkMode } = useContext(DarkModeContext);
 export default function Editview() {
   const [editUser, setEditUser] = useState<User | undefined>();
   const { users, usersDispatch } = useContext(UserContext);
-
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -21,6 +19,7 @@ export default function Editview() {
   function updateUser(user: User) {
     usersDispatch({ type: "UPDATE_USER", user: user });
     alert("User updated");
+    navigate(-1);
   }
 
   function displayUserForm() {

@@ -9,6 +9,7 @@ export type User = {
   zipCode: string;
   mail: string;
   phoneNumber: string;
+  imageSource: string;
 };
 
 export const userType: User[] = [];

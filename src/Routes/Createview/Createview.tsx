@@ -3,15 +3,16 @@ import UserForm from "../../Components/UserForm/UserForm";
 import { UserContext } from "../../Context/userContext";
 import { User } from "../../Types/User";
 import "./Createview.scss";
-// import { DarkModeContext } from "../../Context/darkModeContext";
+import { useNavigate } from "react-router-dom";
 
-// const { isDarkMode } = useContext(DarkModeContext);
 export function Createview() {
   const { usersDispatch } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSubmitNewUser = (user: User) => {
     usersDispatch({ type: "ADD_USER", user: user });
     alert("User added");
+    navigate(-1);
   };
 
   return (
@@ -32,8 +33,8 @@ export default Createview;
  * Nach drücken von create -> Profil Karte mit den Daten befüllen X
  *
  * Loaddata to UserCard X
- * UserCard Bild wird über userAPI gefetched
- *
+ * UserCard Bild wird über userAPI gefetched X
+ * UserCard Bild in user speichern
  * Überprüfung auf Gültigkeit von Inhalt/Email/Nummer
  *
  *
