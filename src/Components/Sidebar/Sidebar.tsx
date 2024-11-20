@@ -18,7 +18,6 @@ export default function Sidebar() {
           setDarkMode(!isDarkMode);
         }}
       />
-
       <div className="sidebar__logo">
         <img src={imgLogo} alt="user administration logo" />
       </div>
