@@ -13,33 +13,62 @@ import {
   faCity,
 } from "@fortawesome/free-solid-svg-icons";
 import { fetchRandomUserData } from "../../Functions/fetchRandomUserData";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../Context/userContext";
+import { useParams } from "react-router-dom";
 
 type UserCardProps = {
   user: User;
   handleOnClick?: any;
 };
-
 export default function UserCard({ user, handleOnClick }: UserCardProps) {
   const [imgSrc, setImgSrc] = useState<string>("");
+  const [editUser, setEditUser] = useState<User | undefined>();
+  const { users, usersDispatch } = useContext(UserContext);
+  const { id } = useParams();
+
+  //users fetchen über update reducerhook
+  function updateUser(user: User) {
+    usersDispatch({ type: "UPDATE_USER", user: user });
+    alert("User updated");
+  }
+
+  async function rndPic() {
+    const result = await fetchRandomUserData();
+    const pictureUrl = result[0].picture.large;
+    setImgSrc(pictureUrl);
+    user.imageSource = pictureUrl;
+    updateUser();
+  }
 
   useEffect(() => {
-    const getRandomPicture = async () => {
-      try {
-        const result = await fetchRandomUserData();
-        const pictureUrl = result[0].picture.large;
-        setImgSrc(pictureUrl);
+    if (!imgSrc.length) {
+      //fetch neues Bild
+      console.log("fetch");
+      rndPic();
+      const user = users.find((user) => String(user.id) === id);
+      console.log(user);
+      setEditUser(user);
+    } else {
+      //bild von Users behalten und nichts machen
+      console.log("hold");
+    }
 
-        user.imageSource = pictureUrl;
+    // const getRandomPicture = async () => {
+    //   try {
+    //     const result = await fetchRandomUserData();
+    //     const pictureUrl = result[0].picture.large;
+    //     setImgSrc(pictureUrl);
+    //     user.imageSource = pictureUrl;
 
-        //Update local storage
-        localStorage.setItem("users", JSON.stringify(user));
-      } catch (error) {
-        console.error("Error fetching random user picture:", error);
-      }
-    };
-    getRandomPicture();
-  }, []);
+    //     //Update local storage
+    //     localStorage.setItem("users", JSON.stringify(user));
+    //   } catch (error) {
+    //     console.error("Error fetching random user picture:", error);
+    //   }
+    // };
+    // getRandomPicture();
+  }, [users]);
 
   return (
     <div className="userCard">

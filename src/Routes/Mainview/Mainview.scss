@@ -6,13 +6,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
 
   &__mainview {
     max-width: 600px;
     padding: 1rem;
-    overflow: hidden;
+    overflow: visible;
 
     &__userLink {
       flex: 1;
