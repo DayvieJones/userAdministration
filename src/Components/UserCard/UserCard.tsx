@@ -22,53 +22,27 @@ type UserCardProps = {
   handleOnClick?: any;
 };
 export default function UserCard({ user, handleOnClick }: UserCardProps) {
-  const [imgSrc, setImgSrc] = useState<string>("");
+  // const [imgSrc, setImgSrc] = useState<string>("");
   const [editUser, setEditUser] = useState<User | undefined>();
   const { users, usersDispatch } = useContext(UserContext);
   const { id } = useParams();
 
   //users fetchen über update reducerhook
-  function updateUser(user: User) {
-    usersDispatch({ type: "UPDATE_USER", user: user });
-    alert("User updated");
-  }
 
-  async function rndPic() {
+  async function getPictureURL() {
     const result = await fetchRandomUserData();
-    const pictureUrl = result[0].picture.large;
-    setImgSrc(pictureUrl);
-    user.imageSource = pictureUrl;
-    updateUser();
+    const pictureURL = result[0].picture.large;
+    user.imageSource = pictureURL;
+    usersDispatch({ type: "UPDATE_USER", user: user });
   }
 
   useEffect(() => {
-    if (!imgSrc.length) {
+    if (!user.imageSource.length) {
       //fetch neues Bild
       console.log("fetch");
-      rndPic();
-      const user = users.find((user) => String(user.id) === id);
-      console.log(user);
-      setEditUser(user);
-    } else {
-      //bild von Users behalten und nichts machen
-      console.log("hold");
+      getPictureURL();
     }
-
-    // const getRandomPicture = async () => {
-    //   try {
-    //     const result = await fetchRandomUserData();
-    //     const pictureUrl = result[0].picture.large;
-    //     setImgSrc(pictureUrl);
-    //     user.imageSource = pictureUrl;
-
-    //     //Update local storage
-    //     localStorage.setItem("users", JSON.stringify(user));
-    //   } catch (error) {
-    //     console.error("Error fetching random user picture:", error);
-    //   }
-    // };
-    // getRandomPicture();
-  }, [users]);
+  }, []);
 
   return (
     <div className="userCard">
@@ -76,7 +50,7 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
         <div className="userCard__media">
           <img
             className="userCard__img"
-            src={imgSrc || myImage}
+            src={user.imageSource || myImage}
             alt="profile picture"
           />
         </div>

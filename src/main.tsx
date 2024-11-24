@@ -8,3 +8,9 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </StrictMode>
 );
+
+//Wenn fertiges Produkt testen:
+/*
+npm run build 
+npm run preview mit local ("mock") server
+*/

@@ -17,21 +17,19 @@
   --placeholder: #a5a5a5;
 }
 
-* {
-  &.dark {
-    --primary-color: #111111;
-    --secondary-color: #232a33;
-    --primary-text: #c7c7c7;
-    --secondary-text: #232a33;
-    --ternary-text: #ffffff;
+.dark {
+  --primary-color: #111111;
+  --secondary-color: #232a33;
+  --primary-text: #c7c7c7;
+  --secondary-text: #232a33;
+  --ternary-text: #ffffff;
 
-    --inputBackground: rgba(83, 94, 128, 0.133);
-    // --cardBackground: rgba(175, 175, 175, 0.534);
-    --cardBackground: #232a33;
-    // --borderColor: rgba(128, 128, 128, 0.5);
-    --borderColor: rgba(255, 255, 255, 0.7);
+  --inputBackground: rgba(83, 94, 128, 0.133);
+  // --cardBackground: rgba(175, 175, 175, 0.534);
+  --cardBackground: #232a33;
+  // --borderColor: rgba(128, 128, 128, 0.5);
+  --borderColor: rgba(255, 255, 255, 0.7);
 
-    // --buttonBorderColor: rgb(255, 255, 255);
-    --inputBorder: 1px solid #ccc;
-  }
+  // --buttonBorderColor: rgb(255, 255, 255);
+  --inputBorder: 1px solid #ccc;
 }

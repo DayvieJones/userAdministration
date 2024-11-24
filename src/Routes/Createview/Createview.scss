@@ -78,4 +78,77 @@
       }
     }
   }
+
+  @media only screen and (min-width: 1001px) {
+    .createview {
+      color: var(--primary-text);
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      width: 100vw;
+
+      &__content {
+        max-width: 85vw;
+        padding: 2rem 2rem;
+        // margin: 3rem 0rem 0rem 1rem;
+      }
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        // margin: 3rem 0rem 0rem 1rem;
+
+        &__section {
+          margin: 0 1.5rem 1.5rem 0;
+          display: flex;
+          padding: 0;
+        }
+
+        &__legend {
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+          font-weight: bold;
+          text-align: left;
+          border: none;
+
+          .--inputRequired {
+            color: $danger;
+          }
+        }
+
+        &__group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__input {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 0.5rem;
+          gap: 0.5rem;
+        }
+      }
+
+      label {
+        // margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      fieldset {
+        border: none;
+      }
+
+      // Fehlerstil für später
+      &--error {
+        input {
+          border-color: $danger;
+
+          &:focus {
+            border-color: $danger;
+            box-shadow: $boxShadowDanger;
+          }
+        }
+      }
+    }
+  }
 }
