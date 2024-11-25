@@ -13,21 +13,15 @@ import {
   faCity,
 } from "@fortawesome/free-solid-svg-icons";
 import { fetchRandomUserData } from "../../Functions/fetchRandomUserData";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../../Context/userContext";
-import { useParams } from "react-router-dom";
 
 type UserCardProps = {
   user: User;
   handleOnClick?: any;
 };
 export default function UserCard({ user, handleOnClick }: UserCardProps) {
-  // const [imgSrc, setImgSrc] = useState<string>("");
-  const [editUser, setEditUser] = useState<User | undefined>();
-  const { users, usersDispatch } = useContext(UserContext);
-  const { id } = useParams();
-
-  //users fetchen über update reducerhook
+  const { usersDispatch } = useContext(UserContext);
 
   async function getPictureURL() {
     const result = await fetchRandomUserData();
@@ -38,8 +32,6 @@ export default function UserCard({ user, handleOnClick }: UserCardProps) {
 
   useEffect(() => {
     if (!user.imageSource.length) {
-      //fetch neues Bild
-      console.log("fetch");
       getPictureURL();
     }
   }, []);

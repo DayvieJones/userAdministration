@@ -1,14 +1,5 @@
 @import "../../variables.scss";
 
-/*
-für top padding hälfte der fontsize
-left-right das doppelte der fontsize
-Golden ratio: Fibonacci Sequenz abgeleitet - horizontal * 1,618
-Rule of Sets: längere Seite * 1,5
-Silver Ratio: (japanische Architektur) - * 2,414
-PI-Seitenverhältnis: * 3.14159265359
-*/
-
 button {
   width: 6.1rem;
   margin: 1rem calc(1rem * 1.618);
@@ -28,6 +19,17 @@ button {
 
   &:hover {
     border: 1px solid #646cff;
+  }
+
+  @media only screen and (min-width: 1001px) {
+    width: 8rem;
+    font-size: 1rem;
+    margin: 1rem calc(1rem * 1.618);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

@@ -12,14 +12,13 @@ export default function Editview() {
 
   useEffect(() => {
     const user = users.find((user) => String(user.id) === id);
-    console.log(user);
     setEditUser(user);
   }, [users, id]);
 
   function updateUser(user: User) {
     usersDispatch({ type: "UPDATE_USER", user: user });
     alert("User updated");
-    navigate(-1);
+    navigate("/");
   }
 
   function displayUserForm() {

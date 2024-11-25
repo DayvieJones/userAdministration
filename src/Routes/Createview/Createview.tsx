@@ -12,7 +12,7 @@ export function Createview() {
   const handleSubmitNewUser = (user: User) => {
     usersDispatch({ type: "ADD_USER", user: user });
     alert("User added");
-    navigate(-1);
+    navigate("/");
   };
 
   return (
@@ -21,21 +21,3 @@ export function Createview() {
 }
 
 export default Createview;
-
-/* **** TODO     ****
- *
- *
- * Local Storage Vorbereiten X
- * UserCard in LocalStorage speichern X
- * UserCard von localstorage laden und displayen X
- *
- * **** Gedanken ****
- * Nach drücken von create -> Profil Karte mit den Daten befüllen X
- *
- * Loaddata to UserCard X
- * UserCard Bild wird über userAPI gefetched X
- * UserCard Bild in user speichern
- * Überprüfung auf Gültigkeit von Inhalt/Email/Nummer
- *
- *
- */

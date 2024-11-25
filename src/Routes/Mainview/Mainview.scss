@@ -9,14 +9,11 @@
   height: 100vh;
   width: 100vw;
 
-  @media only screen and (min-width: 1001px) {
-    flex-direction: row;
-  }
-
   &__mainview {
-    max-width: 600px;
-    padding: 1rem;
-    overflow: visible;
+    // max-width: 600px;
+    // padding: 1rem;
+    max-width: 85vw;
+    padding: 2rem 2rem;
 
     &__userLink {
       flex: 1;
@@ -24,10 +21,36 @@
 
     &__userCards {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
       // width: 100%;
       // width: 30rem;
+    }
+  }
+
+  @media only screen and (min-width: 1001px) {
+    flex-direction: row;
+    align-items: start;
+
+    .index {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+
+      &__mainview {
+        max-width: 85vw;
+        padding: 2rem 2rem;
+
+        gap: 1rem;
+        overflow: hidden;
+
+        &__userCards {
+          display: flex;
+          flex-wrap: wrap;
+          // width: 100%;
+          // width: 30rem;
+        }
+      }
     }
   }
 }
