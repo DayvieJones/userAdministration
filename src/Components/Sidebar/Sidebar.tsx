@@ -4,15 +4,14 @@ import "./Sidebar.scss";
 import imgLogo from "../../../public/logo_user_administration.png";
 
 import { useContext } from "react";
-import { DarkModeContext } from "../../Context/darkModeContext";
 import { Switch } from "../Switch/Switch";
+import { DarkModeContext } from "../../Context/DarkModeContext";
 
 export default function Sidebar() {
   const { isDarkMode, setDarkMode } = useContext(DarkModeContext);
 
   return (
     <div className="sidebar">
-      {/* <h2>Sidebar</h2> */}
       <Switch
         handleOnChangeEvent={() => {
           setDarkMode(!isDarkMode);

@@ -11,7 +11,7 @@ import userManagementReducer from "./Hooks/userManagementReducer";
 import { UserContext } from "./Context/userContext";
 import { User } from "./Types/User";
 import { LOCAL_STORAGE_PROFILES } from "./Functions/constants";
-import { DarkModeContext } from "./Context/darkModeContext";
+import { DarkModeContext } from "./Context/DarkModeContext";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,7 +20,7 @@ function App() {
         path: "/",
         errorElement: <ErrorPage />,
         children: [
-          { path: "", element: <Mainview /> },
+          { path: "/", element: <Mainview /> },
           { path: "/createview", element: <Createview /> },
           { path: "/editview/:id", element: <Editview /> },
           { path: "*", element: <NoMatch /> },
