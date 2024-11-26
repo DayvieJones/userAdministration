@@ -14,21 +14,18 @@ import { LOCAL_STORAGE_PROFILES } from "./Functions/constants";
 import { DarkModeContext } from "./Context/DarkModeContext";
 
 function App() {
-  const router = createBrowserRouter(
-    [
-      {
-        path: "userAdministration",
-        errorElement: <ErrorPage />,
-        children: [
-          { path: "/", element: <Mainview /> },
-          { path: "createview", element: <Createview /> },
-          { path: "editview/:id", element: <Editview /> },
-          { path: "*", element: <NoMatch /> },
-        ],
-      },
-    ],
-    { basename: "userAdministration" }
-  );
+  const router = createBrowserRouter([
+    {
+      path: "userAdministration",
+      errorElement: <ErrorPage />,
+      children: [
+        { path: "/", element: <Mainview /> },
+        { path: "createview", element: <Createview /> },
+        { path: "editview/:id", element: <Editview /> },
+        { path: "*", element: <NoMatch /> },
+      ],
+    },
+  ]);
 
   const [isDarkMode, setDarkMode] = useState(false);
   const [users, usersDispatch] = useReducer(
