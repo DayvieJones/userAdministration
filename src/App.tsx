@@ -21,13 +21,13 @@ function App() {
         errorElement: <ErrorPage />,
         children: [
           { path: "/", element: <Mainview /> },
-          { path: "/createview", element: <Createview /> },
-          { path: "/editview/:id", element: <Editview /> },
+          { path: "createview", element: <Createview /> },
+          { path: "editview/:id", element: <Editview /> },
           { path: "*", element: <NoMatch /> },
         ],
       },
     ],
-    { basename: "/userAdministration" }
+    { basename: "userAdministration" }
   );
 
   const [isDarkMode, setDarkMode] = useState(false);
