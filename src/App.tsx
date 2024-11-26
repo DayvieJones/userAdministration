@@ -27,7 +27,7 @@ function App() {
         ],
       },
     ],
-    { basename: "userAdministration" }
+    { basename: "/userAdministration/" }
   );
 
   const [isDarkMode, setDarkMode] = useState(false);
