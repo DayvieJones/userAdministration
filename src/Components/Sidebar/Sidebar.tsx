@@ -6,6 +6,7 @@ import imgLogo from "../../../public/logo_user_administration.png";
 import { useContext } from "react";
 import { Switch } from "../Switch/Switch";
 import { DarkModeContext } from "../../Context/DarkModeContext";
+import { saveThemeToLocalStorage } from "../../Functions/saveToLocalStorage";
 
 export default function Sidebar() {
   const { isDarkMode, setDarkMode } = useContext(DarkModeContext);
@@ -14,7 +15,9 @@ export default function Sidebar() {
     <div className="sidebar">
       <Switch
         handleOnChangeEvent={() => {
-          setDarkMode(!isDarkMode);
+          const newTheme = !isDarkMode;
+          setDarkMode(newTheme);
+          saveThemeToLocalStorage(newTheme);
         }}
       />
       <div className="sidebar__logo">

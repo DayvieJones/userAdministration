@@ -1,4 +1,4 @@
-import saveToLocalStorage from "../Functions/saveToLocalStorage";
+import { saveProfilesToLocalStorage } from "../Functions/saveToLocalStorage";
 import { User } from "../Types/User";
 
 export type UserManagementState = User[];
@@ -34,6 +34,8 @@ export default function userManagementReducer(
       break;
     }
   }
-  saveToLocalStorage(updatedState);
+
+  saveProfilesToLocalStorage(updatedState);
+
   return updatedState;
 }
